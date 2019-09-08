@@ -5219,11 +5219,11 @@ img {
     text-align: left;
 }
 
-.portfolio_group.list .hall .hall-fw-bg {
+.portfolio_group.list .portfolio-item .portfolio-item-fw-bg {
     padding: 60px 0;
 }
 
-.with_aside .portfolio_group.list .hall .hall-fw-bg {
+.with_aside .portfolio_group.list .portfolio-item .portfolio-item-fw-bg {
     padding-left: 5%;
     padding-right: 5%;
 }

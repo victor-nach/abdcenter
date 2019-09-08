@@ -1290,7 +1290,7 @@ jQuery(document).ready(function() {
 	jQuery('.portfolio_next_js').click(function(e) {
 		e.preventDefault();
 		var stickyH = jQuery('#Top_bar.is-sticky').innerHeight();
-		var item = jQuery(this).closest('.hall').next();
+		var item = jQuery(this).closest('.portfolio-item').next();
 		if (item.length) {
 			jQuery('html, body').animate({
 				scrollTop: item.offset().top - stickyH
@@ -1300,7 +1300,7 @@ jQuery(document).ready(function() {
 	jQuery('.portfolio_prev_js').click(function(e) {
 		e.preventDefault();
 		var stickyH = jQuery('#Top_bar.is-sticky').innerHeight();
-		var item = jQuery(this).closest('.hall').prev();
+		var item = jQuery(this).closest('.portfolio-item').prev();
 		if (item.length) {
 			jQuery('html, body').animate({
 				scrollTop: item.offset().top - stickyH
@@ -1549,12 +1549,12 @@ jQuery(window).load(function() {
 	 * --------------------------------------------------------------------------- */
 	// Portfolio - Isotope
 	jQuery('.portfolio_wrapper  .isotope:not(.masonry-flat)').isotope({
-		itemSelector: '.hall',
+		itemSelector: '.portfolio-item',
 		layoutMode: 'fitRows'
 	});
 	// Portfolio - Masonry Flat
 	jQuery('.portfolio_wrapper .masonry-flat').isotope({
-		itemSelector: '.hall',
+		itemSelector: '.portfolio-item',
 		masonry: {
 			columnWidth: 1
 		}
@@ -2562,4 +2562,14 @@ jQuery(window).load(function(){
 	 * --------------------------------------------------------------------------- */
 	jQuery('.before_after.twentytwenty-container').twentytwenty();
 	
+});
+
+// form submit button
+const formBtn = document.querySelector('#formBtn');
+const formHall = document.querySelector('.form-hall');
+const formText = document.querySelector('#formBtn h3');
+formBtn.addEventListener('click', e => {
+	e.preventDefault()
+	formHall.classList.add('price-show');
+	formText.textContent = 'Pay 50% to Book Now'
 });
